@@ -314,6 +314,7 @@ public final class VClientImpl extends IVClient.Stub {
             InvocationStubManager.getInstance().checkEnv(AppInstrumentation.class);
         }
 
+        // Xposed 注入
         SandXposed.injectXposedModule(context, packageName, processName);
 
         mInitialApplication = LoadedApk.makeApplication.call(data.info, false, null);
